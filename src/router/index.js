@@ -103,6 +103,11 @@ const router = createRouter({
                     path: '/documentation',
                     name: 'documentation',
                     component: () => import('@/views/pages/Documentation.vue')
+                },
+                {
+                    path: '/project/hierarchy',
+                    name: 'hierarchy',
+                    component: () => import('@/views/project/HierarchyMenu.vue')
                 }
             ]
         },

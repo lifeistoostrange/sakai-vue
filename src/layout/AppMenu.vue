@@ -135,7 +135,11 @@ const model = ref([
                 target: '_blank'
             }
         ]
-    }
+    },
+    {
+        label: 'Project',
+        items: [{ label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/project/hierarchy' },]
+    },
 ]);
 </script>
 

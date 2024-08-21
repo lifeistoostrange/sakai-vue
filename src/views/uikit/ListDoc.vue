@@ -39,23 +39,13 @@ function getSeverity(product) {
             <div class="font-semibold text-xl">DataView</div>
             <DataView :value="products" :layout="layout">
                 <template #header>
-                    <div class="flex justify-end">
-                        <SelectButton v-model="layout" :options="options" :allowEmpty="false">
-                            <template #option="{ option }">
-                                <i :class="[option === 'list' ? 'pi pi-bars' : 'pi pi-table']" />
-                            </template>
-                        </SelectButton>
-                    </div>
+                    <div class="flex justify-start">메뉴 목록(Tree)</div>
                 </template>
 
                 <template #list="slotProps">
                     <div class="flex flex-col">
                         <div v-for="(item, index) in slotProps.items" :key="index">
                             <div class="flex flex-col sm:flex-row sm:items-center p-6 gap-4" :class="{ 'border-t border-surface': index !== 0 }">
-                                <div class="md:w-40 relative">
-                                    <img class="block xl:block mx-auto rounded w-full" :src="`https://primefaces.org/cdn/primevue/images/product/${item.image}`" :alt="item.name" />
-                                    <Tag :value="item.inventoryStatus" :severity="getSeverity(item)" class="absolute dark:!bg-surface-900" style="left: 4px; top: 4px"></Tag>
-                                </div>
                                 <div class="flex flex-col md:flex-row justify-between md:items-center flex-1 gap-6">
                                     <div class="flex flex-row md:flex-col justify-between items-start gap-2">
                                         <div>
@@ -136,28 +126,6 @@ function getSeverity(product) {
             </DataView>
         </div>
 
-        <div class="flex flex-col lg:flex-row gap-8">
-            <div class="lg:w-2/3">
-                <div class="card">
-                    <div class="font-semibold text-xl mb-4">PickList</div>
-                    <PickList v-model="picklistProducts" breakpoint="1400px" dataKey="id">
-                        <template #option="{ option }">
-                            {{ option.name }}
-                        </template>
-                    </PickList>
-                </div>
-            </div>
-
-            <div class="lg:w-1/3">
-                <div class="card">
-                    <div class="font-semibold text-xl mb-4">OrderList</div>
-                    <OrderList v-model="orderlistProducts" breakpoint="1400px" dataKey="id" pt:pcList:root="w-full">
-                        <template #option="{ option }">
-                            {{ option.name }}
-                        </template>
-                    </OrderList>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </template>
