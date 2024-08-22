@@ -8,8 +8,8 @@ const loading = ref(true);
 
 const getParantsMenu = async () => {
     try {
-        const result = await axios.get('http://localhost:8080/menu');
-        menus.value = result.data;
+        const result = await axios.get('http://localhost:8080/menu/mother');
+        menus.value = result.data.sort((a, b) => a.menuOrder - b.menuOrder);
     } catch (error) {
         console.error(error);
     } finally {

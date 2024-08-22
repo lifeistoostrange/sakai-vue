@@ -3,7 +3,6 @@
 import ChildTableMenu from './components/ChildTableMenu.vue';
 import MotherTableMenu from './components/MotherTableMenu.vue';
 import TreeMenu from './components/TreeMenu.vue';
-import axios from './service/axios.vue';
 
 </script>
 
@@ -17,5 +16,4 @@ import axios from './service/axios.vue';
             <ChildTableMenu></ChildTableMenu>
         </div>
     </div>
-    <axios></axios>
 </template>
