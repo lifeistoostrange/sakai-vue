@@ -19,7 +19,8 @@ onMounted(() => {
 <template>
     <div class="card">
         <div class="font-semibold text-xl mb-4">TreeTable</div>
-        <TreeTable :value="treeTableValue" v-model:selectionKeys="selectedTreeTableValue">
+        <TreeTable :value="treeTableValue" v-model:selectionKeys="selectedTreeTableValue" class="h-96" scrollable
+            scrollHeight="24rem">
             <Column field="name" header="Name" :expander="true"></Column>
         </TreeTable>
     </div>
